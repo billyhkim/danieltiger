@@ -1,0 +1,118 @@
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+#gameHeader {
+  background-color: hotpink;
+  position: relative;
+  height: 15%;
+
+}
+
+.logo {
+  background-color: blue;
+  width: 25%;
+  height: 60%;
+  position: absolute;
+  left: 0;
+  top: 20%;
+}
+
+nav.gameMenu {
+  background-color: lime;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 60%;
+  top: 20%;
+  text-align: center;
+}
+
+#navBar {
+  list-style-type: none;
+}
+
+#navBar li {
+  display: inline-block;
+}
+
+.mainArea {
+  background-color: yellow;
+  height: 80vh;
+  position: relative;
+  font-size: 0;
+}
+
+.statsContainer {
+  background-color: forestgreen;
+  box-sizing: border-box;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+#gameArea {
+  background-color: grey;
+  width: 80%;
+  height: 100%;
+  right: 0;
+  display: inline-block;
+}
+
+.cardContainer{
+  width: 16.66%;
+  background-color: yellow;
+  float: left;
+  height: 33.33%;
+}
+.card{
+  top: 5%;
+  left: 5%;
+  height: 90%;
+  width: 90%;
+  background-color: orange;
+  position: relative;
+}
+.front, .back{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.front{
+  background-color: firebrick;
+}
+.back{
+  background-color: peru;
+}
+
+.card:hover > .back{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
