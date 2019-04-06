@@ -1,53 +1,51 @@
-
 body {
   height: 100vh;
   margin: 0;
+  font-family: Ultra, sans-serif;
+  background-image: url(images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-
 #gameHeader {
-  background-color: hotpink;
+  background-color: none;
   position: relative;
   height: 15%;
-
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-
 .logo {
-  background-color: blue;
-  width: 25%;
-  height: 60%;
-  position: absolute;
-  left: 0;
-  top: 20%;
+  background-image: url(images/banner.png);
+  width: 100%;
+  height: 100%;
+  position: inline-block;
+  background-position: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-
 nav.gameMenu {
   background-color: lime;
   font-size: 20px;
   position: absolute;
-  right: 0;
+  right: 40px;
   width: 50%;
   height: 60%;
   top: 20%;
   text-align: center;
 }
-
 #navBar {
   list-style-type: none;
 }
-
 #navBar li {
   display: inline-block;
 }
-
 .mainArea {
-  background-color: yellow;
   height: 80vh;
-  position: relative;
   font-size: 0;
 }
-
 .statsContainer {
-  background-color: forestgreen;
+  background-color: none;
   box-sizing: border-box;
   width: 20%;
   height: 100%;
@@ -56,63 +54,47 @@ nav.gameMenu {
   display: inline-block;
   font-size: 1rem;
 }
-
 #gameArea {
-  background-color: grey;
+  background-color: none;
   width: 80%;
   height: 100%;
   right: 0;
   display: inline-block;
 }
-
-.cardContainer{
+.cardContainer {
   width: 16.66%;
-  background-color: yellow;
   float: left;
   height: 33.33%;
+  margin: auto;
+  display: flex;
 }
-.card{
+.card {
   top: 5%;
   left: 5%;
   height: 90%;
   width: 90%;
-  background-color: orange;
   position: relative;
 }
-.front, .back{
+.front, .back {
   height: 100%;
   width: 100%;
   position: absolute;
-  left: 0;
-  top: 0;
+  background-repeat: no-repeat;
 }
-.front{
-  background-color: firebrick;
+.front {
+  background-color: rgb(224, 248, 248);
 }
-.back{
-  background-color: peru;
+.imageMod {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-size: contain;
 }
-
-.card:hover > .back{
+.back {
+  background-image: url(images/back.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.hide {
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
