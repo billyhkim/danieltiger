@@ -2,41 +2,40 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
-    <title>Billy Kim - Memory Match v1.0</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <title>Billy Kim - Memory Match v2.0</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="music.js"></script>
+    <script src="game.js"></script>
+    <script src="stats.js"></script>
     <script src="main.js"></script>
   </head>
   
   <body class="fadeout">
-    <header id="gameHeader">
+    <header id="game-header">
       <div class="logo"></div>
-      <div class="gameMenu">
+      <div class="game-menu">
         <div class="links dropdown">
-          <div id="gameMusic"><u>Play Music!</u></div>
-          <!-- <div class="dropdownContent">
-            <p class="mainTheme">Main Theme</p>
-            <p class="keepTrying">Keep Trying</p>
-            <p class="playingTogether">Playing Together</p>
+          <div id="game-music"><u>Play Music!</u></div>
+          <div class="dropdown-content">
             <p class="mute">Pause</p>
-          </div> -->
+          </div>
         </div>
-        <div class="links modal" id="aboutmodal">
-          <img src="images/bio.png" alt="Billy">
-          <p>Thanks for playing this game! My name is Billy and this project was built for my son, Jed.</p>
-          <p>If you have any questions or feedback, please feel to reach me at billson.kim@gmail.com.</p>
-          <a href="#" rel='modal:close'>Close</a>
+
+        <div id="my-btn">About</div>
+        <div id="my-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="images/bio.png" alt="Billy">
+            <p>Thanks for playing this game! My name is Billy and this project was built for my son, Jed.</p>
+            <p>If you have any questions or feedback, please feel to reach me at billson.kim@gmail.com.</p>
+          </div>
         </div>
-        <div><a class="links" href="#aboutmodal" rel='modal:open'>About</a></div>
-      </div>
-      </div>
     </header>
 
-    <div class="mainArea">
-      <div class="statsContainer">
-        <div class="gamesPlayed">
+    <div class="main-area">
+      <div class="stats-container">
+        <div class="games-played">
           <div class="label">Games Played:</div>
           <div class="value">0</div>
         </div>
@@ -48,10 +47,10 @@
           <div class="label">Accuracy:</div>
           <div class="value">0%</div>
         </div>
-        <button class="gameReset">Reset Game</button>
+        <button class="game-reset">Reset Game</button>
       </div>
 
-      <div id="gameArea"></div>
+      <div id="game-area"></div>
     </div>
 
   </body>
