@@ -15,10 +15,6 @@ function startApp(){
   $('.game-reset').click(stats.gameReset);
   $('body').removeClass('fadeout');
 
-  $('#my-btn').click(function() {
-    $('#my-modal').css('display', 'block');
-  });
-  $('.close').click(function() {
-    $('#my-modal').css('display', 'none');
-  });
+  $('#my-btn').click(() => $('#my-modal').css('display', 'block'));
+  $('.close').click(() => $('#my-modal').css('display', 'none'));
 }
