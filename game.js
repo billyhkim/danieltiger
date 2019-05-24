@@ -45,6 +45,7 @@ class Game {
       music.startAudio('click');
       this.firstCardClicked = $(event.currentTarget);
       this.firstCardClicked.find('.back').fadeOut(300);
+      this.firstCardClicked.off('click');
       return;
     } else {  // 2nd clicked
       music.startAudio('click');
