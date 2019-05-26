@@ -2,7 +2,7 @@ class Music {
   constructor(){
     this.click = new Audio('audio/cardflip.wav');
     this.cardOver = new Audio('audio/cardover.wav');
-    this.gameMusic = new Audio('audio/playmusic.mp3');
+    this.theme = new Audio('audio/theme.mp3');
     this.cardMatch = new Audio('audio/match.wav');
     this.startAudio = this.startAudio.bind(this);
     this.stopAudio = this.stopAudio.bind(this);
@@ -16,10 +16,10 @@ class Music {
       case 'cardover':
       this.cardOver.play();
       break;
-      case 'gamemusic':
-      this.gameMusic.volume = 0.7;
-      this.gameMusic.loop = true;
-      this.gameMusic.play();
+      case 'theme':
+      this.theme.volume = 0.7;
+      this.theme.loop = true;
+      this.theme.play();
       break;
       case 'match':
       this.cardMatch.play();
@@ -35,8 +35,8 @@ class Music {
       case 'cardover':
       this.cardOver.pause();
       break;
-      case 'gamemusic':
-      this.gameMusic.pause();
+      case 'theme':
+      this.theme.pause();
       break;
       case 'match':
       this.cardMatch.pause();

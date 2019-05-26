@@ -1,6 +1,4 @@
-let game;
-let music;
-let stats;
+let game, music, stats;
 $(document).ready(startApp);
 
 function startApp(){
@@ -8,13 +6,14 @@ function startApp(){
   music = new Music();
   stats = new Stats();
 
-  setTimeout(music.startAudio('gamemusic'), 500)
   game.shuffleCards(game.images);  
   game.renderCards();
-  $('.card').click(game.cardClicked);
+  $('.game-area').on('click', '.back', game.cardClicked);
   $('.game-reset').click(stats.gameReset);
   $('body').removeClass('fadeout');
 
-  $('#my-btn').click(() => $('#my-modal').css('display', 'block'));
+  $('.play').click(music.startAudio('theme'));
+  $('.mute').click(music.stopAudio('theme'));
+  $('#about-btn').click(() => $('#my-modal').css('display', 'block'));
   $('.close').click(() => $('#my-modal').css('display', 'none'));
 }

@@ -1,17 +1,15 @@
 class Game {
-  constructor(){
+  constructor() {
     this.firstCardClicked = null;
     this.secondCardClicked = null;
     this.totalPossibleMatches = 9;
     this.matchCounter = 0;
-    this.canClickCard = true;
     this.images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png'];
     
     this.cardClicked = this.cardClicked.bind(this);
     this.hideBothCards = this.hideBothCards.bind(this);
   }
-
-  renderCards(){
+  renderCards() {
     for (let i = 0; i < this.images.length; i++) {
       let container = $('<div>').addClass('card-container');
       let card = $('<div>').addClass('card');
@@ -21,11 +19,10 @@ class Game {
       front.append(image);
       card.append(front,back);
       container.append(card);
-      $('#game-area').append(container);
+      $('.game-area').append(container);
     }
   }
-  
-  shuffleCards(arr){
+  shuffleCards(arr) {
     let currentIndex = arr.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -36,55 +33,46 @@ class Game {
     }
     return arr;
   }
-  
-  cardClicked(){
-    if(this.canClickCard === false) {
+  cardClicked() {
+    if($(event.target).hasClass('flipped')) {
       return;
     }
-    if (this.firstCardClicked === null) { // 1st clicked
+    $(event.target).toggle().addClass('flipped');
+
+    if (this.firstCardClicked === null) {
       music.startAudio('click');
-      this.firstCardClicked = $(event.currentTarget);
-      this.firstCardClicked.find('.back').fadeOut(300);
-      this.firstCardClicked.off('click');
-      return;
-    } else {  // 2nd clicked
+      this.firstCardClicked = $(event.target).prev().find('img').attr('src');
+    } else {
       music.startAudio('click');
-      this.secondCardClicked = $(event.currentTarget);
-      this.secondCardClicked.find('.back').fadeOut(300);
+      this.secondCardClicked = $(event.target).prev().find('img').attr('src');
       stats.attempts++;
-      let firstCardSrc = this.firstCardClicked.find('.front img').attr('src');
-      let secondCardSrc = this.secondCardClicked.find('.front img').attr('src');
-      if (firstCardSrc === secondCardSrc) {
+      if (this.firstCardClicked === this.secondCardClicked) {
         music.startAudio('match');
-        this.firstCardClicked.off('click');
-        $(event.currentTarget).off('click');
         stats.matches++;
         this.matchCounter++;
-        if(this.matchCounter === this.totalPossibleMatches){
-          alert('You Win!');
-          $('.card').off('click');
-        }
         this.firstCardClicked = null;
         this.secondCardClicked = null;
         stats.accuracyCalculate();
         stats.displayStats();
+        $('.flipped').removeClass('flipped back').prev().find('img');
+        if(this.matchCounter === this.totalPossibleMatches){ // win
+          // stats.gamesPlayed++;
+          stats.displayWinModal();
+        }
         return;
-      } else {
-        $(event.currentTarget).on('click');
-        this.canClickCard = false;
+      } else { // no match
+        $('.game-area').off('click', '.back', this.cardClicked);
         stats.accuracyCalculate();
         stats.displayStats();
         setTimeout(this.hideBothCards, 2000)
       }
     }
   }
-  
-  hideBothCards(){
+  hideBothCards() {
     music.startAudio('cardover');
-    this.firstCardClicked.find('.back').fadeIn(250);
-    this.secondCardClicked.find('.back').fadeIn(250);
+    $('.flipped').toggle().removeClass('flipped');
     this.firstCardClicked = null;
     this.secondCardClicked = null;
-    this.canClickCard = true;
+    $('.game-area').on('click', '.back', this.cardClicked);
   }
 }
