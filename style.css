@@ -7,7 +7,7 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 1;
-  transition: 1.5s opacity ease-in-out;
+  transition: 2s opacity ease-in-out;
 }
 body.fadeout {
   opacity: 0;
@@ -31,9 +31,10 @@ body.fadeout {
 }
 .dropdown:hover .dropdown-content {
   display: block;
+  cursor: pointer;
 }
-#about-modal {
-  text-align: center;
+#about-btn {
+  cursor: pointer;
 }
 .logo {
   background-image: url(images/banner.png);
@@ -46,7 +47,7 @@ body.fadeout {
 }
 .game-menu {
   background-color: rgba(255, 205, 205, 0.418);
-  font-size: 1.25vw;
+  font-size: 1.4vw;
   position: absolute;
   display: flex;
   justify-content: space-evenly;
@@ -72,12 +73,22 @@ body.fadeout {
   background-color: rgba(255, 205, 205, 0.418);
   width: 20%;
   height: 35%;
+  margin-top: 10px;
   text-align: center;
   display: inline-block;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   border: 4px ridge rgb(233, 161, 161);
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.games-played {
+  margin-top: 8%;
+}
+.games-played, .attempts, .accuracy {
+  margin-bottom: 3%;
+}
+.label .value {
+  display: inline-block;
 }
 .game-reset {
   color: #494949;
@@ -95,7 +106,7 @@ body.fadeout {
   font-size: 1.25vw;
   cursor: pointer;
 }
-#game-area {
+.game-area {
   width: 80%;
   height: 100%;
   right: 0;
@@ -115,6 +126,10 @@ body.fadeout {
   width: 90%;
   position: relative;
   cursor: pointer;
+}
+.card:hover > .back { 
+  transform: scale(1.04);
+  transition: all .1s ease-in-out;
 }
 .front, .back {
   height: 100%;
@@ -157,11 +172,11 @@ body.fadeout {
   position: relative;
   background-color: #fefefe;
   margin: auto;
-  padding: 1%;
+  padding: 2%;
   top: 20%;
   border: 1px solid #888;
   border-radius: 7px;
-  width: 80%;
+  width: 60%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
   animation-duration: 0.4s
@@ -175,12 +190,11 @@ body.fadeout {
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: black;
   cursor: pointer;
 }
