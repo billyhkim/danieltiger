@@ -60,7 +60,7 @@ class Game {
           stats.displayWinModal();
         }
         return;
-      } else { // no match
+      } else {
         $('.game-area').off('click', '.back', this.cardClicked);
         stats.accuracyCalculate();
         stats.displayStats();
