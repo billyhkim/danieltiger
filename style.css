@@ -7,7 +7,7 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 1;
-  transition: 2s opacity ease-in-out;
+  transition: 1.5s opacity ease-in-out;
 }
 body.fadeout {
   opacity: 0;
@@ -17,23 +17,8 @@ body.fadeout {
   position: relative;
   height: 15%;
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  padding: 12px 12px;
-  z-index: 1;
-  border-radius: 8px;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-  cursor: pointer;
-}
-#about-btn {
+#about-btn:hover, #audio-btn:hover {
+  color: blue;
   cursor: pointer;
 }
 .logo {
@@ -52,8 +37,8 @@ body.fadeout {
   display: flex;
   justify-content: space-evenly;
   right: 20px;
-  width: 15%;
-  height: 28%;
+  width: 25%;
+  height: 25%;
   top: 35%;
   text-align: center;
   border: 4px ridge rgb(233, 161, 161);
@@ -154,7 +139,6 @@ body.fadeout {
   background-position: center;
   background-size: cover;
 }
-
 .modal {
   display: none;
   position: fixed;
@@ -167,7 +151,6 @@ body.fadeout {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
-
 .modal-content {
   position: relative;
   background-color: #fefefe;
@@ -181,20 +164,37 @@ body.fadeout {
   animation-name: animatetop;
   animation-duration: 0.4s
 }
-
 @keyframes animatetop {
   from {top: -500px; opacity: 0}
   to {top: 20%; opacity: 1}
 }
-
+.modal-content-win {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 2%;
+  top: 20%;
+  border: 1px solid #888;
+  border-radius: 7px;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: fadein;
+  animation-duration: 0.4s
+}
+@keyframes fadein {
+  from {opacity: 0}
+  to {opacity: 1}
+}
 .close {
   color: #aaa;
   float: right;
   font-size: 40px;
   font-weight: bold;
 }
-
 .close:hover, .close:focus {
   color: black;
   cursor: pointer;
+}
+.win-vid {
+  width: 80%;
 }

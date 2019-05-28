@@ -5,6 +5,7 @@ class Stats {
     this.accuracy = 0;
     this.gamesPlayed = 0;
     this.gameReset = this.gameReset.bind(this);
+
   }
   displayStats() {
     $('.games-played .value').text(this.gamesPlayed);
@@ -21,7 +22,8 @@ class Stats {
     this.accuracy = this.matches / this.attempts;
   }
   displayWinModal() {
-
+    $('#win-modal').css('display', 'block');
+    $('.win-vid').get(0).play();
   }
   gameReset() {
     game.matchCounter = 0;
@@ -32,5 +34,6 @@ class Stats {
     game.shuffleCards(game.images);
     game.renderCards();
     $('.card').click(game.cardClicked);
+    $('#win-modal').css('display', 'none');
   }
 }

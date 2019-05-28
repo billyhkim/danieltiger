@@ -15,17 +15,15 @@
     <header id="game-header">
       <div class="logo"></div>
       <div class="game-menu">
-        <div class="links dropdown">
-          <div id="game-music"><u>Music</u></div>
-          <div class="dropdown-content">
-            <p class="play">Play</p>
-            <p class="mute">Pause</p>
-          </div>
-        </div>
+        <audio id="music-player" loop autoplay>
+          <source src="audio/theme.mp3" type="audio/mpeg">
+        </audio>
+        <div id="audio-btn" onclick="document.getElementById('music-player').play()">Play</div>
+        <div id="audio-btn" onclick="document.getElementById('music-player').pause()">Pause</div>
 
         <div id="about-btn">About</div>
         <div id="my-modal" class="modal">
-          <div class="modal-content">
+          <div class="modal-content animatetop">
             <span class="close">&times;</span>
             <img src="images/bio.png" alt="Billy">
             <p>Thanks for playing this game! My name is Billy and this project was built for my son, Jed.</p>
@@ -43,12 +41,22 @@
           <div class="label">Attempts: <div class="value">0</div></div>
         </div>
         <div class="accuracy">
-          <div class="label">Accuracy: <div class="value">0</div></div>
+          <div class="label">Accuracy: <div class="value">0%</div></div>
         </div>
         <button class="game-reset">Reset Game</button>
       </div>
 
       <div class="game-area"></div>
+    </div>
+
+    <div id="win-modal" class="modal">
+      <div class="modal-content-win fadein">
+        <video class="win-vid">
+          <source src="videos/kiss.mp4">
+        </video>
+        <p>You won, Neighbor!</p>
+        <button class="game-reset">Let's Play Again!</button>
+      </div>
     </div>
   </body>
 </html> 
