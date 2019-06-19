@@ -9,6 +9,17 @@ class Game {
     this.cardClicked = this.cardClicked.bind(this);
     this.hideBothCards = this.hideBothCards.bind(this);
   }
+  shuffleCards(arr) {
+    let currentIndex = arr.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = arr[currentIndex];
+        arr[currentIndex] = arr[randomIndex];
+        arr[randomIndex] = temporaryValue;
+    }
+    return arr;
+  }
   renderCards() {
     for (let i = 0; i < this.images.length; i++) {
       let container = $('<div>').addClass('card-container');
@@ -21,17 +32,6 @@ class Game {
       container.append(card);
       $('.game-area').append(container);
     }
-  }
-  shuffleCards(arr) {
-    let currentIndex = arr.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = arr[currentIndex];
-        arr[currentIndex] = arr[randomIndex];
-        arr[randomIndex] = temporaryValue;
-    }
-    return arr;
   }
   cardClicked() {
     if($(event.target).hasClass('flipped')) {

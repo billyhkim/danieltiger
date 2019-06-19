@@ -23,7 +23,6 @@ class Stats {
   }
   displayWinModal() {
     $('#win-modal').css('display', 'block');
-    $('.win-vid').get(0).play();
   }
   gameReset() {
     game.matchCounter = 0;

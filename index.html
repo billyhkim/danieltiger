@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" rel="stylesheet">
     <title>Daniel Tiger Memory Match Game</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="music.js"></script>
@@ -14,26 +14,11 @@
   <body class="fadeout">
     <header id="game-header">
       <div class="logo"></div>
-      <div class="game-menu">
-        <audio id="music-player" loop autoplay>
-          <source src="audio/theme.mp3" type="audio/mpeg">
-        </audio>
-        <div id="audio-btn" onclick="document.getElementById('music-player').play()">Play</div>
-        <div id="audio-btn" onclick="document.getElementById('music-player').pause()">Pause</div>
-
-        <div id="about-btn">About</div>
-        <div id="my-modal" class="modal">
-          <div class="modal-content animatetop">
-            <span class="close">&times;</span>
-            <img src="images/bio.png" alt="Billy">
-            <p>Thanks for playing this game! My name is Billy and this project was built for my son, Jed.</p>
-            <p>If you have any questions or feedback, please feel to reach me at billson.kim@gmail.com.</p>
-          </div>
-        </div>
     </header>
 
     <div class="main-area">
       <div class="stats-container">
+        <div class="stats-title">Game Stats</div>
         <div class="games-played">
           <div class="label">Games Played: <div class="value">0</div></div>
         </div>
@@ -43,7 +28,21 @@
         <div class="accuracy">
           <div class="label">Accuracy: <div class="value">0%</div></div>
         </div>
-        <button class="game-reset">Reset Game</button>
+        <button class="reset-btn">Reset Game</button>
+
+        <div class="stats-title">Music</div>
+        <div id="audio-btn" class="audio-play">Play</div>
+        <div id="audio-btn" class="audio-mute">Pause</div>
+
+        <div id="about-btn">About</div>
+        <div id="my-modal" class="modal">
+          <div class="modal-content animatetop">
+            <span class="close">&times;</span>
+            <img src="images/bio.png" alt="Billy">
+            <h3>Thanks for playing this game! My name is Billy and this project was built for my son, Jed.</h3>
+            <h3>If you have any questions or feedback, please feel to reach me at billyhkim.dev@gmail.com.</h3>
+          </div>
+        </div>
       </div>
 
       <div class="game-area"></div>
@@ -51,11 +50,12 @@
 
     <div id="win-modal" class="modal">
       <div class="modal-content-win fadein">
-        <video class="win-vid">
-          <source src="videos/kiss.mp4">
-        </video>
-        <p>You won, Neighbor!</p>
-        <button class="game-reset">Let's Play Again!</button>
+        <div class="modal-elements-center">
+          <img src="images/win.gif" alt="Win Image">
+          <h3>You won, Neighbor!</h3>
+          <h3>That was Grr-ific!</h3>
+          <button class="reset-btn">Let's Play Again!</button>
+        </div>
       </div>
     </div>
   </body>
