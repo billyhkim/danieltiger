@@ -14,76 +14,63 @@ body.fadeout {
   transition: none;
 }
 #game-header {
-  position: relative;
-  height: 15%;
-}
-#about-btn:hover, #audio-btn:hover {
-  color: blue;
-  cursor: pointer;
+  height: 12vh;
 }
 .logo {
   background-image: url(images/banner.png);
   width: 100%;
   height: 100%;
-  position: inline-block;
-  background-position: 5px;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 }
-.game-menu {
-  background-color: rgba(255, 205, 205, 0.418);
-  font-size: 1.4vw;
-  position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-  right: 20px;
-  width: 25%;
-  height: 25%;
-  top: 35%;
-  text-align: center;
-  border: 4px ridge rgb(233, 161, 161);
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.links {
-  display: inline-block;
-  cursor: pointer;
-}
 .main-area {
-  height: 80vh;
+  height: 70vh;
+  padding-left: 5%;
+  padding-right: 5%;
   font-size: 0;
   display: flex;
 }
-.stats-container {
+.info-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+.info-container {
   background-color: rgba(255, 205, 205, 0.418);
-  width: 20%;
-  height: 35%;
-  margin-top: 10px;
+  width: 40vw;
+  height: 15vh;
   text-align: center;
-  display: inline-block;
-  font-size: 1.4vw;
   border: 4px ridge rgb(233, 161, 161);
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.games-played {
-  margin-top: 8%;
-}
-.games-played, .attempts, .accuracy {
-  margin-bottom: 3%;
-}
-.label .value {
+.label, .value {
   display: inline-block;
+  font-size: 1em;
 }
-.game-reset {
+.stats-container, .btn-container {
+  height: 100%;
+  width: 100%;
+}
+.reset-btn, #audio-btn, #about-btn {
   color: #494949;
   background: #d1f1f0;
-  padding: 1vw;
   border: 2px solid #494949;
   border-radius: 6px;
-  font-size: 1.25vw;
+  /* font-size: 1.25vw; */
+  font-size: calc(.6em + .6vw);
+  margin: 3px;
 }
-.game-reset:hover {
+.reset-btn, #about-btn {
+  width: 40%;
+  height: 30%;
+  margin: 0 auto;
+}
+#audio-btn {
+  width: 13%;
+  height: 30%;
+}
+.reset-btn:hover, #audio-btn:hover, #about-btn:hover {
   color: #ffffff;
   background: #f6b93b;
   border-color: #f6b93b;
@@ -91,8 +78,11 @@ body.fadeout {
   font-size: 1.25vw;
   cursor: pointer;
 }
+.reset-btn, #about-btn {
+  display: block;
+}
 .game-area {
-  width: 80%;
+  width: 100%;
   height: 100%;
   right: 0;
   display: inline-block;
@@ -155,6 +145,7 @@ body.fadeout {
   position: relative;
   background-color: #fefefe;
   margin: auto;
+  text-align: center;
   padding: 2%;
   top: 20%;
   border: 1px solid #888;
@@ -195,6 +186,6 @@ body.fadeout {
   color: black;
   cursor: pointer;
 }
-.win-vid {
-  width: 80%;
+.modal-elements-center {
+  text-align: center;
 }
