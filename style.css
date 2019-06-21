@@ -61,12 +61,12 @@ body.fadeout {
 }
 .reset-btn, #about-btn {
   width: 65%;
-  height: 32%;
+  height: 31%;
   margin: 0 auto;
 }
 #audio-btn {
   width: 30%;
-  height: 32%;
+  height: 31%;
 }
 .reset-btn:hover, #audio-btn:hover, #about-btn:hover {
   color: #ffffff;
