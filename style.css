@@ -34,11 +34,11 @@ body.fadeout {
 .info-wrapper {
   display: flex;
   justify-content: space-evenly;
+  height: 15vh;
 }
 .info-container {
   background-color: rgba(255, 205, 205, 0.418);
   width: 40vw;
-  height: 15vh;
   text-align: center;
   border: 4px ridge rgb(233, 161, 161);
   border-radius: 10px;
@@ -46,7 +46,6 @@ body.fadeout {
 }
 .label, .value {
   display: inline-block;
-  font-size: 1em;
 }
 .stats-container, .btn-container {
   height: 100%;
@@ -57,25 +56,23 @@ body.fadeout {
   background: #d1f1f0;
   border: 2px solid #494949;
   border-radius: 6px;
-  /* font-size: 1.25vw; */
   font-size: calc(.6em + .6vw);
   margin: 3px;
 }
 .reset-btn, #about-btn {
-  width: 40%;
-  height: 30%;
+  width: 65%;
+  height: 32%;
   margin: 0 auto;
 }
 #audio-btn {
-  width: 13%;
-  height: 30%;
+  width: 30%;
+  height: 32%;
 }
 .reset-btn:hover, #audio-btn:hover, #about-btn:hover {
   color: #ffffff;
   background: #f6b93b;
   border-color: #f6b93b;
   transition: all 0.4s ease 0s;
-  font-size: 1.25vw;
   cursor: pointer;
 }
 .reset-btn, #about-btn {
@@ -92,7 +89,6 @@ body.fadeout {
   float: left;
   height: 33.33%;
   margin: auto;
-  display: flex;
 }
 .card {
   top: 5%;
@@ -192,21 +188,36 @@ body.fadeout {
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-
-}
-
 /* Portrait */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
-
+    body {
+      font-size: 2.7em;
+    }
+    #game-header {
+      height: 7vh;
+    }
+    .main-area {
+      height: 80vh;
+    }
+    .card-container {
+      width: 33.33%;
+      height: 16.67%;
+    }
+    .info-wrapper {
+      height: 12vh;
+    }
+    .modal-font {
+      font-size: .9em;
+    }
+    .modal-reset-btn {
+      margin-top: 2%;
+      height: 15%;
+      width: 40%;
+    }
 }
 
 /* Landscape */
@@ -215,18 +226,28 @@ body.fadeout {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) { 
-
+    body {
+      font-size: 1rem;
+    }
+    .reset-btn, #about-btn, #audio-btn {
+      display: inline-block;
+      height: 95%;
+      width: 23%;
+      margin: 0 auto;
+    }
+    .modal-content {
+      top: 10%;
+    }
+    .modal-content-win {
+      top: 15%;
+    }
+    @keyframes animatetop {
+      from {top: -500px; opacity: 0}
+      to {top: 5%; opacity: 1}
+    }
 }
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
 
 /* Portrait */
 @media only screen 
@@ -234,7 +255,22 @@ body.fadeout {
   and (max-device-width: 1024px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
-
+    body {
+      font-size: 2em;
+    }
+    #game-header {
+      height: 7vh;
+    }
+    .main-area {
+      height: 80vh;
+    }
+    .card-container {
+      width: 33.33%;
+      height: 16.67%;
+    }
+    .info-wrapper {
+      height: 12vh;
+    }
 }
 
 /* Landscape */
@@ -243,5 +279,13 @@ body.fadeout {
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
-
+    body {
+      font-size: 1.5rem;
+    }
+    .reset-btn, #about-btn, #audio-btn {
+      display: inline-block;
+      height: 95%;
+      width: 23%;
+      margin: 0 auto;
+    }
 }
