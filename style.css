@@ -289,3 +289,26 @@ body.fadeout {
       margin: 0 auto;
     }
 }
+
+/* ----------- iPhone X ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    body {
+      font-size: .9em;
+    }
+    .modal-content {
+      top: 2%;
+    }
+    .modal-content-win {
+      top: 8%;
+    }
+    @keyframes animatetop {
+      from {top: -500px; opacity: 0}
+      to {top: 2%; opacity: 1}
+    }
+}
